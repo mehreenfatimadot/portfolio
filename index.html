@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mehreen Fatima · Digital Marketing Pro</title>
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Fonts: Poppins + Space Grotesk -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Space Grotesk', sans-serif;
+      background: #0a0618;
+      color: #fff;
+      line-height: 1.5;
+    }
+    .website {
+      max-width: 1400px;
+      margin: 2rem auto;
+      background: rgba(10, 6, 24, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 3rem;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), 0 0 0 2px rgba(255, 70, 150, 0.2), 0 0 30px rgba(150, 70, 255, 0.3);
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      position: relative;
+    }
+    /* 3D background elements */
+    .website::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255, 70, 150, 0.3) 0%, rgba(150, 70, 255, 0.2) 50%, transparent 70%);
+      border-radius: 50%;
+      filter: blur(60px);
+      z-index: 0;
+      animation: floatBg 20s infinite alternate;
+    }
+    .website::after {
+      content: '';
+      position: absolute;
+      bottom: -10%;
+      left: -5%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(70, 150, 255, 0.3) 0%, rgba(255, 70, 200, 0.2) 50%, transparent 70%);
+      border-radius: 50%;
+      filter: blur(70px);
+      z-index: 0;
+      animation: floatBg2 18s infinite alternate;
+    }
+    @keyframes floatBg {
+      0% { transform: translate(0, 0) scale(1); opacity: 0.5; }
+      100% { transform: translate(-30px, 30px) scale(1.2); opacity: 0.8; }
+    }
+    @keyframes floatBg2 {
+      0% { transform: translate(0, 0) scale(1); opacity: 0.5; }
+      100% { transform: translate(30px, -30px) scale(1.3); opacity: 0.8; }
+    }
+    /* all content above background */
+    section, nav, footer {
+      position: relative;
+      z-index: 2;
+    }
+    /* navigation - glassmorphism */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 5%;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .logo {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #ff8a5c, #ff4d6d, #b5179e);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 20px rgba(255, 75, 75, 0.5);
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+      padding: 0.5rem 1rem;
+      border-radius: 2rem;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(5px);
+    }
+    .nav-links a:hover {
+      background: linear-gradient(135deg, #ff4d6d, #b5179e);
+      border-color: transparent;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(255, 75, 75, 0.4);
+    }
+    /* HERO SECTION - COMPLETELY CLEAR PICTURE FRAME */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 4rem;
+      padding: 3rem 5% 5rem;
+      position: relative;
+    }
+    .hero-content {
+      flex: 1 1 400px;
+    }
+    .badge-3d {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #fff;
+      font-weight: 600;
+      padding: 0.6rem 1.5rem;
+      border-radius: 40px;
+      margin-bottom: 2rem;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+      transform: perspective(500px) rotateX(5deg);
+    }
+    .badge-3d i {
+      color: #ff4d6d;
+      margin-right: 8px;
+    }
+    .hero-content h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 5rem;
+      font-weight: 800;
+      line-height: 1;
+      background: linear-gradient(145deg, #fff, #ffe6f0, #c9a9ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 10px 30px rgba(255, 100, 150, 0.5);
+      margin-bottom: 1rem;
+    }
+    .hero-highlight-3d {
+      font-size: 1.5rem;
+      margin-bottom: 1.8rem;
+      padding: 1rem 2rem;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      border-radius: 60px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      display: inline-block;
+      transform: perspective(800px) rotateX(2deg) rotateY(-1deg);
+      box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.3);
+    }
+    .hero-highlight-3d i {
+      color: #ff4d6d;
+      margin-right: 12px;
+    }
+    .hero-description {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 1.2rem;
+      max-width: 550px;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+    .stats-3d {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin: 3rem 0;
+    }
+    .stat-3d {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 1rem 2.2rem;
+      border-radius: 60px;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-weight: 600;
+      font-size: 1.2rem;
+      transform: perspective(500px) translateZ(10px);
+      box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.5);
+    }
+    .stat-3d i {
+      color: #ff4d6d;
+      font-size: 1.5rem;
+    }
+    .cta-3d {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .btn-primary-3d {
+      background: linear-gradient(145deg, #ff4d6d, #b5179e);
+      color: white;
+      padding: 1.2rem 3rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      border: none;
+      box-shadow: 0 20px 30px -5px #ff4d6d80, 0 0 20px #b5179e80;
+      transform: perspective(500px) translateZ(15px);
+      transition: 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .btn-primary-3d:hover {
+      transform: perspective(500px) translateZ(25px) scale(1.05);
+      box-shadow: 0 25px 40px -5px #ff4d6d, 0 0 30px #b5179e;
+    }
+    .btn-outline-3d {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      color: white;
+      padding: 1.2rem 3rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transform: perspective(500px) translateZ(10px);
+      transition: 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .btn-outline-3d:hover {
+      background: rgba(255, 75, 125, 0.2);
+      border-color: #ff4d6d;
+      transform: perspective(500px) translateZ(20px);
+    }
+    /* Right side - COMPLETELY TRANSPARENT PICTURE FRAME - NO COLOR */
+    .hero-pic {
+      flex: 0 0 400px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+    .pic-frame-3d {
+      width: 380px;
+      height: 470px;
+      border-radius: 40% 60% 30% 70% / 50% 40% 60% 50%;
+      /* Completely transparent background */
+      background: transparent;
+      /* Just a very subtle border */
+      border: 2px solid rgba(255, 255, 255, 0.15);
+      /* No padding to avoid any color overlay */
+      padding: 0;
+      /* Subtle shadow only */
+      box-shadow: 0 40px 60px -15px rgba(0, 0, 0, 0.7);
+      transform: perspective(1000px) rotateY(-8deg) rotateX(4deg) translateZ(30px);
+      animation: float3d 8s infinite alternate;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    @keyframes float3d {
+      0% { transform: perspective(1000px) rotateY(-8deg) rotateX(4deg) translateZ(30px); }
+      100% { transform: perspective(1000px) rotateY(-2deg) rotateX(2deg) translateZ(50px) scale(1.02); }
+    }
+    .pic-frame-3d img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      border-radius: inherit;
+      /* NO FILTERS AT ALL - completely original colors */
+      filter: none;
+      -webkit-filter: none;
+      /* No blend modes */
+      mix-blend-mode: normal;
+      /* No background */
+      background: transparent;
+      display: block;
+    }
+    .pic-frame-3d:hover img {
+      transform: scale(1.03);
+    }
+    .floating-badge-3d {
+      position: absolute;
+      bottom: 20px;
+      left: -10px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 1rem 2rem;
+      border-radius: 60px;
+      font-weight: 700;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+      transform: perspective(500px) rotateY(8deg) translateZ(25px);
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      color: white;
+    }
+    .floating-badge-3d i {
+      color: gold;
+      font-size: 1.5rem;
+    }
+    /* Section titles - vibrant */
+    .section-title-3d {
+      font-family: 'Poppins', sans-serif;
+      font-size: 3rem;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 4rem;
+      background: linear-gradient(135deg, #ffd3b5, #ff9eb5, #c9b0ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 40px #ff4d6d80;
+      transform: perspective(500px) translateZ(10px);
+    }
+    .container {
+      padding: 5rem 5%;
+    }
+    /* services cards - 3D */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.5rem;
+    }
+    .service-card-3d {
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 2.5rem;
+      padding: 2.5rem 2rem;
+      transform: perspective(800px) rotateX(2deg) translateZ(15px);
+      box-shadow: 0 30px 40px -20px rgba(0,0,0,0.6), 0 0 0 1px rgba(255, 100, 150, 0.2);
+      transition: 0.3s;
+    }
+    .service-card-3d:hover {
+      transform: perspective(800px) rotateX(0deg) translateZ(30px) scale(1.02);
+      border-color: #ff4d6d;
+      box-shadow: 0 40px 60px -15px #ff4d6d;
+    }
+    .service-icon-3d {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(145deg, #ff4d6d, #b5179e);
+      border-radius: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 2rem;
+      box-shadow: 0 20px 30px -5px #ff4d6d;
+    }
+    .service-icon-3d i {
+      font-size: 3rem;
+      color: white;
+    }
+    .service-card-3d h3 {
+      font-size: 2rem;
+      background: linear-gradient(135deg, #fff, #ffb3c6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1rem;
+    }
+    .service-card-3d p {
+      color: rgba(255, 255, 255, 0.8);
+    }
+    /* portfolio - with real images */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2.5rem;
+    }
+    .portfolio-item-3d {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      border-radius: 2rem;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transform: perspective(800px) rotateY(2deg) translateZ(15px);
+      transition: 0.3s;
+      box-shadow: 0 20px 30px -10px black;
+    }
+    .portfolio-item-3d:hover {
+      transform: perspective(800px) rotateY(0deg) translateZ(30px) scale(1.02);
+      border-color: #ff4d6d;
+      box-shadow: 0 30px 50px -10px #ff4d6d;
+    }
+    .portfolio-img-3d {
+      height: 240px;
+      overflow: hidden;
+      position: relative;
+    }
+    .portfolio-img-3d img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.4s;
+    }
+    .portfolio-item-3d:hover img {
+      transform: scale(1.08);
+    }
+    .portfolio-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, #000000cc, transparent);
+      padding: 1.5rem;
+      color: white;
+    }
+    .portfolio-info-3d {
+      padding: 1.8rem;
+    }
+    .portfolio-info-3d h4 {
+      font-size: 1.5rem;
+      color: white;
+      margin-bottom: 0.3rem;
+    }
+    .portfolio-info-3d p {
+      color: #ffb3c6;
+      font-weight: 500;
+    }
+    /* skills */
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3rem;
+    }
+    .skill-category-3d {
+      flex: 1 1 300px;
+      background: rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(10px);
+      border-radius: 2.5rem;
+      padding: 2.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      transform: perspective(800px) translateZ(10px);
+    }
+    .skill-category-3d h3 {
+      font-size: 2rem;
+      background: linear-gradient(135deg, #ff9eb5, #c9b0ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 2rem;
+    }
+    .skill-info {
+      display: flex;
+      justify-content: space-between;
+      color: rgba(255,255,255,0.9);
+      font-weight: 500;
+    }
+    .progress-bar-3d {
+      height: 12px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 20px;
+      margin-bottom: 1.5rem;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    .progress-3d {
+      height: 100%;
+      background: linear-gradient(90deg, #ff4d6d, #b5179e, #7209b7);
+      border-radius: 20px;
+      box-shadow: 0 0 10px #ff4d6d;
+    }
+    /* testimonials */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    .testimonial-card-3d {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 2rem;
+      padding: 2rem;
+      transform: perspective(500px) translateZ(10px);
+      border-left: 5px solid #ff4d6d;
+    }
+    .testimonial-card-3d i {
+      color: #ff4d6d;
+      font-size: 2.5rem;
+      opacity: 0.7;
+    }
+    .client-name {
+      color: white;
+      font-weight: 700;
+      margin-top: 1rem;
+    }
+    .client-role {
+      color: #ff9eb5;
+    }
+    /* blog */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    .blog-card-3d {
+      background: rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 2rem;
+      overflow: hidden;
+      transform: perspective(800px) rotateX(1deg);
+    }
+    .blog-img-3d {
+      height: 200px;
+      overflow: hidden;
+    }
+    .blog-img-3d img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.4s;
+    }
+    .blog-card-3d:hover img {
+      transform: scale(1.05);
+    }
+    .blog-content {
+      padding: 1.8rem;
+    }
+    .blog-date {
+      color: #ffb3c6;
+      font-weight: 600;
+    }
+    .blog-content h4 {
+      color: white;
+      font-size: 1.3rem;
+      margin: 0.5rem 0;
+    }
+    .read-more-3d {
+      color: #ff9eb5;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    /* contact */
+    .contact-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3rem;
+    }
+    .contact-info-3d, .contact-form-3d {
+      flex: 1 1 300px;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 2.5rem;
+      padding: 2.5rem;
+      transform: perspective(800px) translateZ(15px);
+    }
+    .contact-info-3d h3 {
+      font-size: 2rem;
+      background: linear-gradient(135deg, #ffb3c6, #c9b0ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .contact-detail {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 1.5rem 0;
+      color: rgba(255,255,255,0.9);
+    }
+    .contact-detail i {
+      width: 45px;
+      height: 45px;
+      background: linear-gradient(145deg, #ff4d6d, #b5179e);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      box-shadow: 0 10px 20px #ff4d6d;
+    }
+    .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 1.2rem;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 1.5rem;
+      font-family: inherit;
+      color: white;
+      margin-bottom: 1rem;
+    }
+    .form-group input:focus, .form-group textarea:focus {
+      border-color: #ff4d6d;
+      outline: none;
+      box-shadow: 0 0 20px #ff4d6d80;
+    }
+    .submit-btn-3d {
+      background: linear-gradient(145deg, #ff4d6d, #b5179e);
+      color: white;
+      padding: 1.2rem;
+      border: none;
+      border-radius: 3rem;
+      font-weight: 700;
+      width: 100%;
+      box-shadow: 0 15px 30px #ff4d6d;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .submit-btn-3d:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 20px 40px #ff4d6d;
+    }
+    .footer-3d {
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(20px);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding: 2rem;
+      text-align: center;
+      color: white;
+    }
+    .social-links a {
+      color: white;
+      font-size: 1.8rem;
+      margin: 0 1rem;
+      transition: 0.3s;
+      display: inline-block;
+    }
+    .social-links a:hover {
+      transform: translateY(-5px) scale(1.2);
+      color: #ff4d6d;
+    }
+    /* Responsive fixes for picture */
+    @media (max-width: 768px) {
+      .hero-content h1 { font-size: 3.5rem; }
+      .hero-pic { flex-basis: 100%; }
+      .pic-frame-3d { 
+        width: 300px; 
+        height: 370px; 
+        margin: 0 auto;
+      }
+      .floating-badge-3d {
+        left: 20px;
+        bottom: 10px;
+      }
+    }
+    @media (max-width: 480px) {
+      .pic-frame-3d { 
+        width: 260px; 
+        height: 320px; 
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="website">
+  <!-- navigation -->
+  <nav class="navbar">
+    <div class="logo">✨ Mehreen Fatima</div>
+    <div class="nav-links">
+      <a href="#home">Home</a><a href="#services">Services</a><a href="#portfolio">Portfolio</a><a href="#skills">Skills</a><a href="#testimonials">Testimonials</a><a href="#blog">Blog</a><a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO with COMPLETELY CLEAR PICTURE FRAME - ABSOLUTELY NO COLOR TINT -->
+  <section id="home" class="hero">
+    <div class="hero-content" data-aos="fade-right">
+      <div class="badge-3d"><i class="fas fa-crown"></i> TOP 1% FACEBOOK MARKETING EXPERT</div>
+      <h1>Mehreen Fatima</h1>
+      <div class="hero-highlight-3d"><i class="fas fa-bullseye"></i> Meta Ads · Campaign Architect · 4.8x avg ROAS</div>
+      <p class="hero-description">I don't just run ads — I engineer profit. 4+ years of scaling e‑commerce, fintech & beauty brands with data‑backed Facebook strategies and creative that converts.</p>
+      <div class="stats-3d">
+        <div class="stat-3d"><i class="fas fa-check-circle"></i> 50+ campaigns</div>
+        <div class="stat-3d"><i class="fas fa-smile"></i> 35+ clients</div>
+        <div class="stat-3d"><i class="fas fa-trophy"></i> 4.8x ROAS</div>
+      </div>
+      <div class="cta-3d">
+        <a href="#contact" class="btn-primary-3d"><i class="fas fa-rocket"></i> skyrocket your brand</a>
+        <a href="#portfolio" class="btn-outline-3d"><i class="fas fa-eye"></i> view case studies</a>
+      </div>
+    </div>
+    <div class="hero-pic" data-aos="fade-left">
+      <div class="pic-frame-3d">
+        <!-- MEHREEN KI ASLI PICTURE - ORIGINAL COLORS, NO TINT -->
+        <img src="mehr.jpg.jpg" alt="Mehreen Fatima - Digital Marketing Expert">
+      </div>
+      <div class="floating-badge-3d"><i class="fas fa-star"></i> 4.9 ★ (28 reviews)</div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="container">
+      <h2 class="section-title-3d" data-aos="flip-up"><i class="fas fa-bolt"></i> what i do best</h2>
+      <div class="services-grid">
+        <div class="service-card-3d" data-aos="flip-left"><div class="service-icon-3d"><i class="fab fa-facebook"></i></div><h3>facebook domination</h3><p>full-funnel ads, retargeting, lookalikes & creative testing that cuts through noise.</p></div>
+        <div class="service-card-3d" data-aos="flip-left" data-aos-delay="100"><div class="service-icon-3d"><i class="fas fa-chart-line"></i></div><h3>campaign management</h3><p>daily optimization, A/B testing, budget pacing & transparent reporting.</p></div>
+        <div class="service-card-3d" data-aos="flip-left" data-aos-delay="200"><div class="service-icon-3d"><i class="fas fa-users"></i></div><h3>audience research</h3><p>deep-dive into interests, behaviors & buyer psychology to find gold.</p></div>
+        <div class="service-card-3d" data-aos="flip-left" data-aos-delay="300"><div class="service-icon-3d"><i class="fas fa-magic"></i></div><h3>creative strategy</h3><p>ad concepts, hooks & angles that stop the scroll and drive conversions.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO with PROFESSIONAL IMAGES -->
+  <section id="portfolio">
+    <div class="container">
+      <h2 class="section-title-3d" data-aos="flip-up"><i class="fas fa-briefcase"></i> featured projects</h2>
+      <div class="portfolio-grid">
+        <div class="portfolio-item-3d" data-aos="zoom-in-up">
+          <div class="portfolio-img-3d">
+            <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600&auto=format" alt="fashion ecommerce">
+            <div class="portfolio-overlay"><span>🔥 4.2x ROAS</span></div>
+          </div>
+          <div class="portfolio-info-3d"><h4>URBAN DRIP</h4><p>streetwear · 2.1M reach in 90 days</p></div>
+        </div>
+        <div class="portfolio-item-3d" data-aos="zoom-in-up" data-aos-delay="100">
+          <div class="portfolio-img-3d">
+            <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&auto=format" alt="fintech app">
+            <div class="portfolio-overlay"><span>📈 +340% awareness</span></div>
+          </div>
+          <div class="portfolio-info-3d"><h4>FINSAVE</h4><p>fintech · 1.8M impressions</p></div>
+        </div>
+        <div class="portfolio-item-3d" data-aos="zoom-in-up" data-aos-delay="200">
+          <div class="portfolio-img-3d">
+            <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=600&auto=format" alt="beauty products">
+            <div class="portfolio-overlay"><span>💄 -52% CPA</span></div>
+          </div>
+          <div class="portfolio-info-3d"><h4>GLOW EDIT</h4><p>beauty · cost per acquisition halved</p></div>
+        </div>
+        <div class="portfolio-item-3d" data-aos="zoom-in-up" data-aos-delay="300">
+          <div class="portfolio-img-3d">
+            <img src="https://images.unsplash.com/photo-1556740714-a8395b3bf30f?w=600&auto=format" alt="tech startup">
+            <div class="portfolio-overlay"><span>🚀 3.9x ROAS</span></div>
+          </div>
+          <div class="portfolio-info-3d"><h4>TECHVIBE</h4><p>B2B saas · 150% lead increase</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title-3d" data-aos="flip-up"><i class="fas fa-cog"></i> technical mastery</h2>
+      <div class="skills-container">
+        <div class="skill-category-3d" data-aos="fade-right"><h3>marketing</h3><div><div class="skill-info"><span>facebook ads</span><span>95%</span></div><div class="progress-bar-3d"><div class="progress-3d" style="width:95%"></div></div></div><div><div class="skill-info"><span>audience research</span><span>92%</span></div><div class="progress-bar-3d"><div class="progress-3d" style="width:92%"></div></div></div><div><div class="skill-info"><span>campaign strategy</span><span>96%</span></div><div class="progress-bar-3d"><div class="progress-3d" style="width:96%"></div></div></div></div>
+        <div class="skill-category-3d" data-aos="fade-left"><h3>analytics & tools</h3><div><div class="skill-info"><span>meta business suite</span><span>98%</span></div><div class="progress-bar-3d"><div class="progress-3d" style="width:98%"></div></div></div><div><div class="skill-info"><span>google analytics</span><span>85%</span></div><div class="progress-bar-3d"><div class="progress-3d" style="width:85%"></div></div></div><div><div class="skill-info"><span>optimization</span><span>94%</span></div><div class="progress-bar-3d"><div class="progress-3d" style="width:94%"></div></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials">
+    <div class="container">
+      <h2 class="section-title-3d" data-aos="flip-up"><i class="fas fa-star"></i> what clients say</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card-3d" data-aos="flip-up"><i class="fas fa-quote-right"></i><p style="color:rgba(255,255,255,0.9); margin:1rem 0;">"Mehreen turned our facebook around — 4x ROAS in 6 weeks. Her research is phenomenal."</p><div class="client-name">Ayesha Khan</div><div class="client-role">Beautylane</div></div>
+        <div class="testimonial-card-3d" data-aos="flip-up" data-aos-delay="100"><i class="fas fa-quote-right"></i><p style="color:rgba(255,255,255,0.9); margin:1rem 0;">"Finally a marketer who explains everything transparently. Saved 35% cost with better results."</p><div class="client-name">Omar Raza</div><div class="client-role">TechVibe</div></div>
+        <div class="testimonial-card-3d" data-aos="flip-up" data-aos-delay="200"><i class="fas fa-quote-right"></i><p style="color:rgba(255,255,255,0.9); margin:1rem 0;">"She manages our campaigns like her own business. Highest ROAS we've ever seen."</p><div class="client-name">Zara Imran</div><div class="client-role">Eliza Fashion</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG with images -->
+  <section id="blog">
+    <div class="container">
+      <h2 class="section-title-3d" data-aos="flip-up"><i class="fas fa-pen-fancy"></i> latest insights</h2>
+      <div class="blog-grid">
+        <div class="blog-card-3d" data-aos="fade-up"><div class="blog-img-3d"><img src="https://images.unsplash.com/photo-1557838923-2985c318be48?w=600&auto=format" alt="blog"></div><div class="blog-content"><div class="blog-date">march 2025</div><h4>how to 10x your ROAS</h4><p style="color:#ccc;">5 underused facebook strategies...</p><a href="#" class="read-more-3d">read <i class="fas fa-arrow-right"></i></a></div></div>
+        <div class="blog-card-3d" data-aos="fade-up" data-aos-delay="100"><div class="blog-img-3d"><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&auto=format" alt="blog"></div><div class="blog-content"><div class="blog-date">feb 2025</div><h4>audience research deep dive</h4><p style="color:#ccc;">find hidden interests...</p><a href="#" class="read-more-3d">read <i class="fas fa-arrow-right"></i></a></div></div>
+        <div class="blog-card-3d" data-aos="fade-up" data-aos-delay="200"><div class="blog-img-3d"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&auto=format" alt="blog"></div><div class="blog-content"><div class="blog-date">jan 2025</div><h4>optimization checklist</h4><p style="color:#ccc;">daily habits for better campaigns...</p><a href="#" class="read-more-3d">read <i class="fas fa-arrow-right"></i></a></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title-3d" data-aos="flip-up"><i class="fas fa-paper-plane"></i> let's work together</h2>
+      <div class="contact-container" data-aos="zoom-in">
+        <div class="contact-info-3d"><h3>ready to scale?</h3><p style="color:#ccc;">tell me about your brand — i'll reply within 12h</p><div class="contact-detail"><i class="fas fa-envelope"></i><span>Mehreenfatima222003@gmail.com</span></div><div class="contact-detail"><i class="fas fa-phone-alt"></i><span>0317 6252665</span></div><div class="contact-detail"><i class="fas fa-map-marker-alt"></i><span>remote · pakistan</span></div></div>
+        <div class="contact-form-3d"><form><div class="form-group"><input type="text" placeholder="your name"></div><div class="form-group"><input type="email" placeholder="email"></div><div class="form-group"><input type="text" placeholder="brand website (optional)"></div><div class="form-group"><textarea rows="4" placeholder="your goals & budget"></textarea></div><button class="submit-btn-3d">send <i class="fas fa-bolt"></i></button></form></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer-3d">
+    <div class="social-links"><a href="#"><i class="fab fa-facebook"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-linkedin"></i></a><a href="#"><i class="fab fa-twitter"></i></a></div>
+    <p>© 2025 Mehreen Fatima · facebook ads specialist</p>
+  </footer>
+</div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({duration:1000,once:true});</script>
+</body>
+</html>
